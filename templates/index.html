@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Placement Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-box">🎯</div>
+
+        <div>
+            <h2>Student Placement</h2>
+            <p>Prediction System</p>
+        </div>
+
+    </div>
+
+    <div class="right-nav">
+
+        <a href="#"
+           class="contact-link"
+           onclick="openContact()">
+
+            Contact Us
+
+        </a>
+
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            🚀 AI-Powered Intelligence
+        </span>
+
+        <h1>
+
+            Know Your
+
+            <span>
+                Placement Chances
+            </span>
+
+            Instantly
+
+        </h1>
+
+        <p>
+
+            Get AI-powered insights into your placement readiness.
+            Our advanced ML models analyze your profile and predict
+            your success with actionable roadmaps.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="/login">
+
+                <button class="primary-btn">
+
+                    Start Free Prediction
+
+                </button>
+
+            </a>
+
+        </div>
+
+        <div class="disclosure-box">
+
+            <h3>
+                Important Placement Insights
+            </h3>
+
+            <ul>
+
+                <li>
+                    This prediction is AI-generated and may not be 100% accurate.
+                </li>
+
+                <li>
+                    Companies evaluate communication, projects, and interview performance.
+                </li>
+
+                <li>
+                    Strong coding and aptitude skills improve placement chances.
+                </li>
+
+                <li>
+                    Internships and real-world projects increase opportunities.
+                </li>
+
+                <li>
+                    Resume quality and confidence are important during recruitment.
+                </li>
+
+                <li>
+                    This system is designed for guidance and self-improvement.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature-card">
+
+        <div class="icon">🎯</div>
+
+        <div>
+
+            <h3>
+                Predictive Analytics
+            </h3>
+
+            <p>
+                Advanced ML algorithms to forecast your placement success
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="icon">📈</div>
+
+        <div>
+
+            <h3>
+                Growth Tracking
+            </h3>
+
+            <p>
+                Monitor your improvements and progress over time
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="feature-card">
+
+        <div class="icon">💼</div>
+
+        <div>
+
+            <h3>
+                Company Recommendation
+            </h3>
+
+            <p>
+                Get suitable company recommendations based on your profile
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT POPUP -->
+
+<div class="contact-popup"
+     id="contactPopup">
+
+    <div class="contact-card">
+
+        <span class="close-btn"
+              onclick="closeContact()">
+
+            &times;
+
+        </span>
+
+        <h2>
+            Contact Us
+        </h2>
+
+        <p>
+
+            <strong>
+                Developer Name:
+            </strong>
+
+            <br>
+
+            Pallati Omkar
+
+            <br>
+
+            V. Mahesh
+
+            <br>
+
+            P. Varshith Goud
+
+        </p>
+
+        <p>
+
+            <strong>
+                College Name:
+            </strong>
+
+            <br>
+
+            Symbiosis Institute of Technology Hyderabad
+
+        </p>
+
+        <p>
+
+            <strong>
+                Project:
+            </strong>
+
+            <br>
+
+            AI-Based Student Placement Prediction System
+
+        </p>
+
+        <p>
+
+            <strong>
+                Professional Email:
+            </strong>
+
+            <br>
+
+            omkar.pallati305@gmail.com
+
+            <br>
+
+            24070722026@sithyd.siu.edu.in
+
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+function openContact(){
+
+    document.getElementById(
+        "contactPopup"
+    ).style.display = "flex";
+}
+
+function closeContact(){
+
+    document.getElementById(
+        "contactPopup"
+    ).style.display = "none";
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Placement Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body class="result-body">
+
+<!-- RESULT SECTION -->
+
+<section class="result-section">
+
+    <div class="result-title">
+
+        <h1>Placement Prediction Result</h1>
+
+        <p>
+            Your placement prediction and detailed analysis
+        </p>
+
+    </div>
+
+    <!-- TOP RESULT BOX -->
+
+    <div class="result-top-box">
+
+        <div class="placement-status">
+
+            <div class="status-icon">
+                ✔
+            </div>
+
+            <div>
+
+                <h2>{{ status }}</h2>
+
+                {% if status == "PLACED" %}
+
+                    <p>
+                        Congratulations! You have high chances
+                        of getting placed.
+                    </p>
+
+                {% else %}
+
+                    <p>
+                        You currently need improvement for placement.
+                    </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+        <div class="salary-box">
+
+            <div class="salary-icon">
+                ₹
+            </div>
+
+            <div>
+
+                <h3>Predicted Salary Package</h3>
+
+                <h2>{{ salary }} LPA</h2>
+
+                <p>(Lakhs Per Annum)</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ANALYSIS CARDS -->
+
+    <div class="analysis-grid">
+
+        <!-- WEAK SECTORS -->
+
+        <div class="analysis-card weak-card">
+
+            <h3>⚠ Weak Sectors</h3>
+
+            <ul>
+
+                {% for sector in weak_sectors %}
+
+                    <li>{{ sector }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <!-- REASONS -->
+
+        <div class="analysis-card reason-card">
+
+            <h3>❓ Reasons</h3>
+
+            <ul>
+
+                {% for reason in reasons %}
+
+                    <li>{{ reason }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <!-- SUGGESTIONS -->
+
+        <div class="analysis-card suggestion-card">
+
+            <h3>💡 Suggestions</h3>
+
+            <ul>
+
+                {% for suggestion in suggestions %}
+
+                    <li>{{ suggestion }}</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- COMPANIES -->
+
+    <div class="company-section">
+
+        <h2>🏢 Recommended Companies</h2>
+
+        <div class="company-grid">
+
+            {% for company in companies %}
+
+                <div class="company-card">
+
+                    <h3>{{ company }}</h3>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <div class="predict-again">
+
+        <a href="/predict-page">
+
+            <button class="predict-btn">
+
+                Predict Again
+
+            </button>
+
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+</html>

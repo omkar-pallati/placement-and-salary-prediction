@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Sign Up
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="login-body">
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <h1>
+            Create Account
+        </h1>
+
+        <p>
+            Join the AI Placement Platform
+        </p>
+
+        <form>
+
+            <input type="text"
+                   placeholder="Full Name">
+
+            <input type="email"
+                   placeholder="Email Address">
+
+            <input type="password"
+                   placeholder="Password">
+
+            <button class="login-btn">
+
+                Sign Up
+
+            </button>
+
+        </form>
+
+        <div class="signup-link">
+
+            Already have an account?
+
+            <a href="/login">
+
+                Login
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

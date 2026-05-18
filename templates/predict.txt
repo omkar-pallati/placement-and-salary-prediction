@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Prediction Form
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="predict-page">
+
+<div class="predict-wrapper">
+
+    <div class="predict-box">
+
+        <h1>
+            Placement Prediction Form
+        </h1>
+
+        <div class="progress-container">
+
+            <div class="progress-bar"
+                 id="progressBar">
+
+            </div>
+
+        </div>
+
+        <form action="/predict" method="POST">
+
+            <!-- STEP 1 -->
+
+            <div class="form-step active">
+
+                <h2>
+                    Academic Details
+                </h2>
+
+                <input type="number"
+                       placeholder="10th Percentage">
+
+                <input type="number"
+                       placeholder="12th Percentage">
+
+                <button type="button"
+                        class="next-btn">
+
+                    Next
+
+                </button>
+
+            </div>
+
+            <!-- STEP 2 -->
+
+            <div class="form-step">
+
+                <h2>
+                    Engineering Background
+                </h2>
+
+                <input type="number"
+                       placeholder="B.Tech CGPA">
+
+                <select>
+
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>IT</option>
+
+                </select>
+
+                <input type="number"
+                       placeholder="Backlogs">
+
+                <div class="button-group">
+
+                    <button type="button"
+                            class="prev-btn">
+
+                        Previous
+
+                    </button>
+
+                    <button type="button"
+                            class="next-btn">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- STEP 3 -->
+
+            <div class="form-step">
+
+                <h2>
+                    Skills
+                </h2>
+
+                <input type="number"
+                       placeholder="Coding Skills">
+
+                <input type="number"
+                       placeholder="Communication Skills">
+
+                <input type="number"
+                       placeholder="Aptitude Skills">
+
+                <div class="button-group">
+
+                    <button type="button"
+                            class="prev-btn">
+
+                        Previous
+
+                    </button>
+
+                    <button type="button"
+                            class="next-btn">
+
+                        Next
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- STEP 4 -->
+
+            <div class="form-step">
+
+                <h2>
+                    Experience
+                </h2>
+
+                <input type="number"
+                       placeholder="Projects">
+
+                <input type="number"
+                       placeholder="Internships">
+
+                <input type="number"
+                       placeholder="Hackathons">
+
+                <input type="number"
+                       placeholder="Certifications">
+
+                <div class="button-group">
+
+                    <button type="button"
+                            class="prev-btn">
+
+                        Previous
+
+                    </button>
+
+                    <button type="submit"
+                            class="submit-btn">
+
+                        Predict Placement
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+const steps =
+document.querySelectorAll(".form-step");
+
+const nextBtns =
+document.querySelectorAll(".next-btn");
+
+const prevBtns =
+document.querySelectorAll(".prev-btn");
+
+const progress =
+document.getElementById("progressBar");
+
+let currentStep = 0;
+
+function updateSteps(){
+
+    steps.forEach((step,index)=>{
+
+        step.classList.remove("active");
+
+        if(index===currentStep){
+
+            step.classList.add("active");
+        }
+    });
+
+    progress.style.width =
+    ((currentStep+1)/steps.length)*100 + "%";
+}
+
+nextBtns.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        if(currentStep < steps.length-1){
+
+            currentStep++;
+
+            updateSteps();
+        }
+    });
+});
+
+prevBtns.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        if(currentStep > 0){
+
+            currentStep--;
+
+            updateSteps();
+        }
+    });
+});
+
+updateSteps();
+
+</script>
+
+</body>
+
+</html>
