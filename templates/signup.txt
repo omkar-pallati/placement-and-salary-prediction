@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="UTF-8">
@@ -8,41 +7,52 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>
-        Sign Up
-    </title>
+    <title>Signup</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
 
 </head>
 
-<body class="login-body">
+<body class="predict-page">
 
-<div class="login-container">
+<div class="predict-wrapper">
 
-    <div class="login-card">
+    <div class="predict-box">
 
-        <h1>
-            Create Account
-        </h1>
+        <h1>Create Account</h1>
 
-        <p>
-            Join the AI Placement Platform
-        </p>
+        {% if error %}
 
-        <form>
+            <p style="color:red;
+                      text-align:center;
+                      margin-bottom:20px;">
+
+                {{ error }}
+
+            </p>
+
+        {% endif %}
+
+        <form action="/signup" method="POST">
 
             <input type="text"
-                   placeholder="Full Name">
+                   name="name"
+                   placeholder="Full Name"
+                   required>
 
             <input type="email"
-                   placeholder="Email Address">
+                   name="email"
+                   placeholder="Email Address"
+                   required>
 
             <input type="password"
-                   placeholder="Password">
+                   name="password"
+                   placeholder="Password"
+                   required>
 
-            <button class="login-btn">
+            <button type="submit"
+                    class="submit-btn">
 
                 Sign Up
 
@@ -50,7 +60,9 @@
 
         </form>
 
-        <div class="signup-link">
+        <br>
+
+        <p style="text-align:center;">
 
             Already have an account?
 
@@ -60,12 +72,11 @@
 
             </a>
 
-        </div>
+        </p>
 
     </div>
 
 </div>
 
 </body>
-
 </html>

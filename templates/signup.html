@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Signup</title>
+    <title>Sign Up</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
@@ -18,15 +18,13 @@
 
 <div class="predict-wrapper">
 
-    <div class="predict-box">
+    <div class="predict-box auth-box">
 
         <h1>Create Account</h1>
 
         {% if error %}
 
-            <p style="color:red;
-                      text-align:center;
-                      margin-bottom:20px;">
+            <p class="auth-error">
 
                 {{ error }}
 
@@ -34,7 +32,9 @@
 
         {% endif %}
 
-        <form action="/signup" method="POST">
+        <form action="/signup"
+              method="POST"
+              class="auth-form">
 
             <input type="text"
                    name="name"
@@ -51,18 +51,15 @@
                    placeholder="Password"
                    required>
 
-            <button type="submit"
-                    class="submit-btn">
+            <button type="submit">
 
-                Sign Up
+                Create Account
 
             </button>
 
         </form>
 
-        <br>
-
-        <p style="text-align:center;">
+        <p class="auth-link">
 
             Already have an account?
 
